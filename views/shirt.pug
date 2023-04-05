@@ -13,39 +13,27 @@ block content
   -Shirt.value=50;
   -results.push(Shirt);
   -var Shirt1={};
-  -Shirt1.Breed="T-shirt";
-  -Shirt1.Dimension="Medium";
+  -Shirt1.type="T-shirt";
+  -Shirt1.size="Medium";
   -Shirt1.value=70;
   -results.push(Shirt1);
   -var Shirt2={};
-  -Shirt2.Breed="Casual";
-  -Shirt2.Dimension="Large";
+  -Shirt2.type="Casual";
+  -Shirt2.size="Large";
   -Shirt2.value=100;
   -results.push(Shirt2);
   
-
-   div(class='container-fluid')
-    div(class='row')
-     div(class='Shirt1') Dog one Details
-       p Breed #{results[0].Breed}
-       p Size #{results[0].Dimension}
-       p Price #{results[0].value}
-
-     div(class='Shirt1') Dog Two Details
-       p Breed #{results[1].Breed}
-       p Size #{results[1].Dimension}
-       p Price #{results[1].value}
-       
-     div(class='Shirt1') Dog Two Details
-       p Breed #{results[1].Breed}
-       p Size #{results[1].Dimension}
-       p Price #{results[1].value}  
-     
+ div(class="container-fluid")
+  div(class="row")
+   each b,index  in results
+    div(class="col-sm-2" onclick =`buy(${index})`) #{b.Breed}, #{b.Dimension}, #{b.value}
+    script.
+        function buy(a)
+        {
+            alert(`You purchased Item ${a+1}`)
+        } 
 
 
-   //-var list = results
-    //each item in list
-    //div(class='col-sm-2') #{item}
-    
+   
 
        
